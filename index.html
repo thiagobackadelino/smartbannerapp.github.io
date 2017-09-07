@@ -32,9 +32,10 @@ function startMyApp()
   document.location = 'meuvivo://';
   setTimeout( function()
   {
-      
+      if( confirm( "Mensagem"))
+      {
         document.location = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
-      
+      }  
   }, 300);
  }
    
