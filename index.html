@@ -14,6 +14,17 @@
 	window.location = urlAppleApp;
 	}
 	
+	 function openAppAppleMovelOpen(){
+	var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
+	var urlAppleApp = "meuvivo://";
+	// will call with 25 mills delay in case deep link fails, i.e. no installed app
+	setTimeout
+	(function () { window.open(urlApple) }, 25);
+	
+	// try to load the deep link URL
+	window.open(urlAppleApp);
+	}
+	
    
    
  </script>
@@ -25,6 +36,10 @@
   </br>
   </br>
   <a href="javascript:openAppAppleMovelLocation()">LINK NO ONCLICK  WINDOW LOCATION</a>
+
+  </br>
+  </br>
+  <a href="javascript:openAppAppleMovelOpen()">LINK NO ONCLICK  WINDOW OPEN</a>
 
 </body>
 </html>
