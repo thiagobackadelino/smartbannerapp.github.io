@@ -28,25 +28,22 @@
 
 	
 	function checkUrl(url){
+var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
     var request = new XMLHttpRequest;
     request.open('GET', url, true);
     request.send();
     request.onreadystatechange = function(){
         if(request.readyState==4){
-            console.log(request.readyState);
-	    console.log(url);
-            return alert("existe   "+url);
+            window.open(url);
         }else{
-            return alert("nao existe   "+url);
+            window.open(urlApple);
         }
     }
 };
 	
 	
 		function getVerificacao(){
-	var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
 	var urlAppleApp = "meuvivo://";
-	 checkUrl(urlApple);
 	 checkUrl(urlAppleApp);
 		
 	}
