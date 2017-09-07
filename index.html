@@ -25,10 +25,28 @@
 	window.open(urlAppleApp);
 	}
 	
-	function setIframe(){
+
+	
+	function checkUrl(url){
+    var request = new XMLHttpRequest;
+    request.open('GET', url, true);
+    request.send();
+    request.onreadystatechange = function(){
+        if(request.readyState==4){
+            console.log(request.readyState);
+            return alert("existe"+url);
+        }else{
+            return alert("nao existe"+url);
+        }
+    }
+};
+	
+	
+		function getVerificacao(){
 	var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
 	var urlAppleApp = "meuvivo://";
-	document.getElementById("iframe").src = urlAppleApp 	;
+	 checkUrl(urlApple);
+	checkUrl(urlAppleApp);
 		
 	}
    
@@ -49,9 +67,8 @@
 
   </br>
   </br>
-  <a href="javascript:setIframe()">LINK IFRAME</a>
+  <a href="javascript:getVerificacao()">LINK VERIFICACAO</a>
 
-<iframe id="iframe" src=""> </iframe>
 
 </body>
 </html>
