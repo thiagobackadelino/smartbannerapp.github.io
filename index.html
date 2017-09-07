@@ -3,7 +3,7 @@
  
 <script type="text/javascript">
    
- function openAppAppleMovel(){
+ function openAppAppleMovelLocation(){
 	var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
 	var urlAppleApp = "meuvivo://";
 	// will call with 25 mills delay in case deep link fails, i.e. no installed app
@@ -13,6 +13,17 @@
 	// try to load the deep link URL
 	window.location = urlAppleApp;
 	}
+	
+	 function openAppAppleMovelOpen(){
+	var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
+	var urlAppleApp = "meuvivo://";
+	// will call with 25 mills delay in case deep link fails, i.e. no installed app
+	setTimeout
+	(function () { window.location = urlApple; }, 25);
+	
+	// try to load the deep link URL
+	window.open(urlAppleApp);
+	}
    
    
  </script>
@@ -21,9 +32,11 @@
 
 <body>
   <a href="meuvivo://">LINK NO HREF</a>
-  
   </br>
   </br>
-  <a onclick="openAppAppleMovel()">LINK NO ONCLICK  WINDOW LOCATION</a>
+  <a onclick="openAppAppleMovelLocation()">LINK NO ONCLICK  WINDOW LOCATION</a>
+  </br>
+  </br>
+  <a onclick="openAppAppleMovelOpen()">LINK NO ONCLICK  WINDOW OPEN</a>
 </body>
 </html>
