@@ -22,7 +22,12 @@
 	(function () { window.location = urlApple; }, 25);
 	
 	// try to load the deep link URL
+	try{
 	window.open(urlAppleApp);
+	}
+		 catch(e){
+			window.open(urlApple); 
+		 }
 	}
    
    
