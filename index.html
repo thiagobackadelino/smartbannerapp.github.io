@@ -27,34 +27,17 @@
 	
 
 	
-	function checkUrl(url){
-var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
-  
-   var request = new XMLHttpRequest;
-				 try{
-    request.open('GET', url, true);
-    request.send();
-			  }
-		catch(e){
-			 window.open("https://appstore.vivo.com.br/utilidades/meu-vivo-movel");
-		}
-    request.onreadystatechange = function(){
-        if(request.readyState==4){
-            window.open(url);
-        }else{
-            window.open(urlApple);
-        }
-    }
-  
-		
-};
-	
-	
-		function getVerificacao(){
-	var urlAppleApp = "meuvivo://";
-	 checkUrl(urlAppleApp);
-		
-	}
+function startMyApp()
+{
+  document.location = 'meuvivo://';
+  setTimeout( function()
+  {
+      if( confirm( 'You do not seem to have Your App installed, do you want to go download it now?'))
+      {
+        document.location = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
+      }
+  }, 300);
+ }
    
    
  </script>
@@ -73,7 +56,7 @@ var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
 
   </br>
   </br>
-  <a href="javascript:getVerificacao()">LINK VERIFICACAO</a>
+  <a href="javascript:startMyApp()">LINK VERIFICACAO</a>
 
 
 </body>
