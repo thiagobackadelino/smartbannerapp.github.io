@@ -3,59 +3,33 @@
  
 <script type="text/javascript">
    
- function openAppAppleMovelLocation(){
-	var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
-	var urlAppleApp = "meuvivo://";
-	// will call with 25 mills delay in case deep link fails, i.e. no installed app
-	setTimeout
-	(function () { window.location = urlApple; }, 25);
-	
-	// try to load the deep link URL
-	window.location = urlAppleApp;
-	}
-	
-	 function openAppAppleMovelOpen(){
-	var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
-	var urlAppleApp = "meuvivoteste://";
-	// will call with 25 mills delay in case deep link fails, i.e. no installed app
-	setTimeout
-	(function () { window.open(urlApple) }, 300);
-	
-	// try to load the deep link URL
-	window.open(urlAppleApp);
-	}
-	
 
-	
-function startMyApp()
-{
-  document.location = 'meuvivo://';
-  setTimeout( function()
-  {
-      if( confirm( "Mensagem"))
-      {
-        document.location = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
-      }  
-  }, 300);
- }
-   
+	var redirect = function (location) {
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('src', location);
+    iframe.setAttribute('width', '1px');
+    iframe.setAttribute('height', '1px');
+    iframe.setAttribute('position', 'absolute');
+    iframe.setAttribute('top', '0');
+    iframe.setAttribute('left', '0');
+    document.documentElement.appendChild(iframe);
+    iframe.parentNode.removeChild(iframe);
+    iframe = null;
+};
+  
 	
 	function openAppAppleMovel(){
 	var urlApple = "https://appstore.vivo.com.br/utilidades/meu-vivo-movel";
 	var urlAppleApp = "meuvivoteste://";
 	var mensagem = "Você será direcionado a Vivo APP Store.";
-		try{
-		document.location = urlAppleApp;
-		}
-		catch(err){
-			alert('erro');
-		}
+		
+ 	  redirect(urlAppleApp);
 	  
 	  setTimeout( function()
 	  {
 	      if( confirm(mensagem))
 	      {
-	        document.location = urlApple;
+		      redirect(urlApple);
 	      }  
 	  }, 300);
 	}
@@ -67,7 +41,7 @@ function startMyApp()
 <body>
 </br>
   </br>
-  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 4</a>
+  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 5</a>
 
 
 </body>
