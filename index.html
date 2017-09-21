@@ -19,12 +19,10 @@ oXHR.open("GET", urlAppleApp, true);
 
 oXHR.onreadystatechange = function (oEvent) {  
     if (oXHR.readyState === 4) {  
-        if (oXHR.status === 200) { 
-	  document.location = urlAppleApp;
+        if (oXHR.status === 200) {  
           console.log(oXHR.responseText)  
         } else {  
-           console.log("Error", oXHR.statusText);  
-	   document.location = urlApple;
+           console.log("Error", oXHR.statusText);   
         }  
     }  
 }; 
@@ -41,7 +39,7 @@ oXHR.send(null);
 <body>
 </br>
   </br>
-  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 16</a>
+  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 17</a>
 
 
 </body>
