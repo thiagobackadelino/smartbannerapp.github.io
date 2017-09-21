@@ -13,21 +13,21 @@
 	var urlAppleApp = "meuvivo://";
 	var mensagem = "Você será direcionado a Vivo APP Store.";
 		
-	var request = new XMLHttpRequest();  
-request.open('GET', urlAppleApp, true);
-request.onreadystatechange = function(){
-    if (request.readyState === 4){
-        if (request.status === 404) {  
-            alert("Oh no, it does not exist!");
+var oXHR = new XMLHttpRequest();
+
+oXHR.open("GET", urlAppleApp, true);
+
+oXHR.onreadystatechange = function (oEvent) {  
+    if (oXHR.readyState === 4) {  
+        if (oXHR.status === 200) {  
+          console.log(oXHR.responseText)  
+        } else {  
+           console.log("Error", oXHR.statusText);  
         }  
-    }
-};
-try{
-request.send();
-}
-		catch(erro){
-		alert(erro);
-		}
+    }  
+}; 
+
+oXHR.send(null); 
 	}
 	
 
@@ -39,7 +39,7 @@ request.send();
 <body>
 </br>
   </br>
-  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 14</a>
+  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 15</a>
 
 
 </body>
