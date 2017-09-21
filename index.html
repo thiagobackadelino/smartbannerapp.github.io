@@ -13,23 +13,10 @@
 	var urlAppleApp = "meuvivo://";
 	var mensagem = "Você será direcionado a Vivo APP Store.";
 		
-var oXHR = new XMLHttpRequest();
-		oXHR.setRequestHeader('Access-Control-Allow-Origin','*');
-
-oXHR.open("GET", urlAppleApp, true);
-
-oXHR.onreadystatechange = function (oEvent) {  
-    if (oXHR.readyState === 4) {  
-	     alert( oXHR.statusText);
-        if (oXHR.status === 200) {  
-          alert( oXHR.statusText);
-        } else {  
-           alert( oXHR.statusText);
-        }  
-    }  
-}; 
-
-oXHR.send(null); 
+var xhr = createCORSRequest('GET', urlAppleApp);
+xhr.setRequestHeader(
+    'Access-Control-Allow-Origin', '*');
+xhr.send();
 	}
 	
 
@@ -41,7 +28,7 @@ oXHR.send(null);
 <body>
 </br>
   </br>
-  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 19</a>
+  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 20</a>
 
 
 </body>
