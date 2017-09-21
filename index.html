@@ -13,26 +13,20 @@
 	var urlAppleApp = "meuvivo://";
 	var mensagem = "Você será direcionado a Vivo APP Store.";
 		
-	
-	var oReq = new XMLHttpRequest();
+	var request = new XMLHttpRequest();  
+request.open('GET', urlAppleApp, true);
+request.onreadystatechange = function(){
+    if (request.readyState === 4){
+        if (request.status === 404) {  
+            alert("Oh no, it does not exist!");
+        }  
+    }
+};
+request.send();
 
-	
-	// recupera dados não processado como um string binária
-	oReq.overrideMimeType("text/plain; charset=x-user-defined");
-	oReq.addEventListener("error", transferFailed, false);
-		oReq.open("GET", urlAppleApp, true);
-	  setTimeout( function()
-	  {
-	      if( confirm(mensagem))
-	      {
-	        document.location = urlApple;
-	      }  
-	  }, 300);
 	}
 	
-	function transferFailed(evt) {
-	  alert("Um erro ocorreu durante a transferência do arquivo.");
-	}
+
    
  </script>
   
@@ -41,7 +35,7 @@
 <body>
 </br>
   </br>
-  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 12</a>
+  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 13</a>
 
 
 </body>
