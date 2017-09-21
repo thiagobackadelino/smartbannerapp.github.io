@@ -4,7 +4,7 @@
 <script type="text/javascript">
    
 
-	var redirect = function (location) {
+     function iframeteste(location) {
     var iframe = document.createElement('iframe');
     iframe.setAttribute('src', location);
     iframe.setAttribute('width', '1px');
@@ -13,6 +13,8 @@
     iframe.setAttribute('top', '0');
     iframe.setAttribute('left', '0');
     document.documentElement.appendChild(iframe);
+    iframe.parentNode.removeChild(iframe);
+    iframe = null;
 };
   
 	
@@ -21,13 +23,13 @@
 	var urlAppleApp = "meuvivo://";
 	var mensagem = "Você será direcionado a Vivo APP Store.";
 		
- 	  redirect(urlAppleApp);
+ 	  iframeteste(urlAppleApp);
 	  
 	  setTimeout( function()
 	  {
 	      if( confirm(mensagem))
 	      {
-		      redirect(urlApple);
+		      iframeteste(urlApple);
 	      }  
 	  }, 300);
 	}
@@ -39,7 +41,7 @@
 <body>
 </br>
   </br>
-  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 7</a>
+  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 8</a>
 
 
 </body>
