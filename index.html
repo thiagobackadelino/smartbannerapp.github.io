@@ -2,20 +2,10 @@
 <link id="faviconLogin" rel="icon" type="image/x-icon" href="https://hml1036-login.vivo.com.br/loginmarca/favicon.ico"/>
  
 <script type="text/javascript">
-   
+  
 
-     function iframeteste(location) {
-    var iframe = document.createElement('iframe');
-    iframe.setAttribute('src', location);
-    iframe.setAttribute('width', '1px');
-    iframe.setAttribute('height', '1px');
-    iframe.setAttribute('position', 'absolute');
-    iframe.setAttribute('top', '0');
-    iframe.setAttribute('left', '0');
-    document.documentElement.appendChild(iframe);
-    iframe.parentNode.removeChild(iframe);
-    iframe = null;
-};
+
+
   
 	
 	function openAppAppleMovel(){
@@ -23,15 +13,25 @@
 	var urlAppleApp = "meuvivo://";
 	var mensagem = "Você será direcionado a Vivo APP Store.";
 		
- 	  iframeteste(urlAppleApp);
-	  
+	
+	var oReq = new XMLHttpRequest();
+
+	oReq.open("GET", url, urlAppleApp);
+	// recupera dados não processado como um string binária
+	oReq.overrideMimeType("text/plain; charset=x-user-defined");
+	oReq.addEventListener("error", transferFailed, false);
+		
 	  setTimeout( function()
 	  {
 	      if( confirm(mensagem))
 	      {
-		      iframeteste(urlApple);
+	        document.location = urlApple;
 	      }  
 	  }, 300);
+	}
+	
+	function transferFailed(evt) {
+	  alert("Um erro ocorreu durante a transferência do arquivo.");
 	}
    
  </script>
@@ -41,7 +41,7 @@
 <body>
 </br>
   </br>
-  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 8</a>
+  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 9</a>
 
 
 </body>
