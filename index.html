@@ -22,8 +22,12 @@ request.onreadystatechange = function(){
         }  
     }
 };
+try{
 request.send();
-
+}
+		catch(erro){
+		alert(erro);
+		}
 	}
 	
 
@@ -35,7 +39,7 @@ request.send();
 <body>
 </br>
   </br>
-  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 13</a>
+  <a href="javascript:openAppAppleMovel()">LINK TRY CATCH 14</a>
 
 
 </body>
